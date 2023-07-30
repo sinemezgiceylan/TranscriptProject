@@ -5,10 +5,11 @@ import java.util.Scanner;
 
 public class GenerateTranscript {
 
-    Scanner input = new Scanner(System.in);
+
 
     public void takeInputFromUser() {
 
+        Scanner input = new Scanner(System.in);
         System.out.println("Enter Student Id: ");
         int studentId = Integer.parseInt(input.nextLine());
         Transcript transcript = new Transcript(studentId);
@@ -40,8 +41,6 @@ public class GenerateTranscript {
                  System.out.println("Incorrect entry");
                  break;
              }
-
-
         }
 
     }
@@ -50,7 +49,7 @@ public class GenerateTranscript {
 
         Scanner input = new Scanner(System.in);
         System.out.println("Enter filename: ");
-        String fileName = "C:\\Users\\ceyla\\Desktop\\Java-Ders-Projeleri\\TranscriptProject\\src\\" + input.nextLine();
+        String fileName = input.nextLine();
 
 
 
@@ -62,6 +61,7 @@ public class GenerateTranscript {
             Transcript transcript = new Transcript(studentId);
 
             while (input.hasNextLine()) {
+
                 String row = input.nextLine();
                 String[] fileRow = row.split(" ");
 
@@ -80,6 +80,9 @@ public class GenerateTranscript {
         } catch (FileNotFoundException e) {
             System.out.println("File not found!");
         }
+
+        input.close();
     }
+
 
 }

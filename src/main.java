@@ -1,9 +1,4 @@
-import main.CourseGrade;
-import main.Transcript;
-import util.Grade;
 import main.GenerateTranscript;
-
-
 
 public class main {
 
@@ -12,5 +7,6 @@ public class main {
         GenerateTranscript generateTranscript = new GenerateTranscript();
         generateTranscript.takeInputFromUser();
         generateTranscript.takeInputFromFile();
+
     }
 }
